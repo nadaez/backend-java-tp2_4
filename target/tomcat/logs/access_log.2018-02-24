@@ -11,3 +11,4 @@
 0:0:0:0:0:0:0:1 - - [24/Feb/2018:19:32:34 +0100] "DELETE /rest/deleteHomeById HTTP/1.1" 404 - http-bio-8080-exec-2 44
 0:0:0:0:0:0:0:1 - - [24/Feb/2018:19:34:05 +0100] "DELETE /rest/deleteHomeById HTTP/1.1" 404 - http-bio-8080-exec-2 89
 0:0:0:0:0:0:0:1 - - [24/Feb/2018:19:35:33 +0100] "DELETE /rest/home/deleteHomeById HTTP/1.1" 204 - http-bio-8080-exec-5 1672
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:19:47:05 +0100] "DELETE /rest/home HTTP/1.1" 204 - http-bio-8080-exec-2 1919
