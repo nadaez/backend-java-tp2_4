@@ -1,26 +1,31 @@
 package domain;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Heater {
+@DiscriminatorValue("Chauffage")
+public class Heater extends Device {
 
+    public Heater() {
+		super();
+	}
 
-    Long id;
+//	Long id;
     String name;
 String puissance;
 
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
+//    @Id
+//    @GeneratedValue
+//    public Long getId() {
+//        return id;
+//    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;

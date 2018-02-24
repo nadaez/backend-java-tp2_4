@@ -75,10 +75,10 @@ try {
 	
 	}
 	
-	public Home findById(int id){
+	public ElectronicDevice findById(int id){
 		
 //tx.begin();
-		return manager.find(Home.class, id);
+		return manager.find(ElectronicDevice.class, id);
 //		manager.close();
 //		factory.close();
 }
