@@ -30,6 +30,7 @@ public class JpaTest {
 		
 		homeDao.update(heater1, home1);
 		
+	homeDao.deleteById(36);		
 	
 		
 	}

@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -20,6 +21,7 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
+import dao.HomeDAO;
 import domain.Heater;
 import domain.Home;
 
@@ -84,4 +86,27 @@ public class HomeService {
 	public Home getHomeById(int id) {
 		return manager.createQuery("Select a From Home a where id =" + id, Home.class).getSingleResult();
 	}
+	
+	
+	
+	
+	
+	//Supprimer les residences dont l'adresse est passé en paramétre
+		//param : @adresse : l'adresse des résidences a supprimer
+		
+		@DELETE
+//	    @Path("/deleteHomeById")
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public void  deleteHomeById(@FormParam("id") int id) {
+		HomeDAO homeDAO = new HomeDAO();
+		homeDAO.deleteById(id);
+		
+	}
+		
+	
+	
+	
 }
+
+
+

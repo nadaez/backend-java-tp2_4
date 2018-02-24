@@ -53,7 +53,7 @@ public class HomeDAO {
 //		factory.close();
 
 	}
-	public void delete(int idRes){
+	public void delete(long l){
 
 //		EntityManagerFactory factory = Persistence
 //				.createEntityManagerFactory("mysql");
@@ -62,7 +62,7 @@ public class HomeDAO {
 //		EntityTransaction tx = manager.getTransaction();
 tx.begin();
 try {
-			  manager.remove(findById(idRes));	
+			  manager.remove(findById(l));	
 			  } catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -74,13 +74,24 @@ try {
 	
 	}
 	
-	public Home findById(int id){
+	public Home findById(long l){
 		
 //tx.begin();
-		return manager.find(Home.class, id);
+		return manager.find(Home.class, l);
 //		manager.close();
 //		factory.close();
-}
+}	
+	
+	
+	
+	public void deleteById(int id){
+		List<Home> resultList = manager.createQuery("Select a From Home a where a.id= '" + id +"'", Home.class).getResultList();
+		for(Home x : resultList) {
+			tx.begin();
+			manager.remove(x);
+			tx.commit();
+		}
+	}
 	
 
 public void update(Heater heater, Home home) {
