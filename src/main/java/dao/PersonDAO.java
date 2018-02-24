@@ -18,15 +18,15 @@ import domain.*;
 
 
 public class PersonDAO{
-	
+
 	EntityManagerFactory factory = Persistence
 			.createEntityManagerFactory("mysqlperso");
 	EntityManager manager = factory.createEntityManager();
-	
+
 	EntityTransaction tx = manager.getTransaction();
-	
-	
-	
+
+
+
 	public Person create(String nom,String Prenom,String email) {
 		tx.begin();
 		Person p1 = new Person();
@@ -48,28 +48,36 @@ public class PersonDAO{
 //		factory.close();
 
 	}
-	
-	
-	
+
+
+
 	public Person findById(int id){
-		
+
 		tx.begin();
 
 		return manager.find(Person.class, id);
 }
-	
+
+  public Person getPersonById(int id) {
+    return manager.createQuery("Select a From Person a where id =" + id, Person.class).getSingleResult();
+  }
 
 
 
 
-//	public void delete(int idPerson) {
-//	}
-//	
+  public void deleteById(int id){
+    List<Person> resultList = manager.createQuery("Select a From Person a where a.id= '" + id +"'", Person.class).getResultList();
+    for(Person x : resultList) {
+      tx.begin();
+      manager.remove(x);
+      tx.commit();
+    }
+  }
 
 public void updateHome(Person person, Home home) {
-	
+
 	tx.begin();
-    
+
     person.getHomes().add(home);
     manager.merge(person);
 	tx.commit();
@@ -81,9 +89,9 @@ public void updateHome(Person person, Home home) {
 
 
 public void updateElecDevice(Person person, ElectronicDevice elec) {
-	
+
 	tx.begin();
-    
+
     person.getElectronicDevices().add(elec);
     manager.merge(person);
 	tx.commit();
@@ -108,7 +116,7 @@ public void updateElecDevice(Person person, ElectronicDevice elec) {
 //		p1.setMail("houssaineezziraiy@gmail.com");
 //		p1.setPrenom("Houssaine");
 //		this.create(p1);
-//	
+//
 //    }
 //
 //}
@@ -128,7 +136,7 @@ public void updateElecDevice(Person person, ElectronicDevice elec) {
 //@Override
 //public void delete(Person t) {
 //	// TODO Auto-generated method stub
-//	
+//
 //}
 //
 //@Override
@@ -139,11 +147,11 @@ public void updateElecDevice(Person person, ElectronicDevice elec) {
 //
 //	EntityManagerHelper.commit();
 //
-//	
+//
 //
 //	return t;
 //}
 //}
 //
-//	
+//
 //
