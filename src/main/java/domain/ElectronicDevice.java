@@ -8,11 +8,15 @@ import javax.persistence.Id;
 @Entity
 @DiscriminatorValue("Phone")
 public class ElectronicDevice extends Device {
-   // long id;
     String name;
     String marque;
 
-    
+
+  public ElectronicDevice(String prix, String name, String marque) {
+    this.setPrix(prix);
+    this.name = name;
+    this.marque = marque;
+  }
 
   public ElectronicDevice(Long idDev, String name) {
   		super(idDev, name);
@@ -28,16 +32,6 @@ public class ElectronicDevice extends Device {
 	public void setMarque(String marque) {
 		this.marque = marque;
 	}
-
-//	@Id
-//    @GeneratedValue
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(long id) {
-//        this.id = id;
-//    }
 
     public String getName() {
         return name;

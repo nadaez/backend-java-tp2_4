@@ -1,7 +1,5 @@
 package rest;
 
-import java.io.PrintWriter;
-import java.security.Permissions;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -17,8 +15,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.codehaus.jettison.json.JSONArray;
-import org.codehaus.jettison.json.JSONException;
+import dao.HeaterDAO;
 import org.codehaus.jettison.json.JSONObject;
 
 import dao.HomeDAO;
@@ -27,86 +24,132 @@ import domain.Home;
 
 @Path("/home")
 public class HomeService {
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysqlperso");
-	EntityManager manager = factory.createEntityManager();
-	EntityTransaction tx = manager.getTransaction();
+  EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysqlperso");
+  EntityManager manager = factory.createEntityManager();
+  EntityTransaction tx = manager.getTransaction();
+  HomeDAO homeDAO = new HomeDAO();
+  private HeaterDAO heaterDAO = new HeaterDAO();
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Home> getHomes() {
-		List<Home> resultList = manager.createQuery("Select a From Home a", Home.class).getResultList();
-		System.out.println("Home quantuty :" + resultList.size());
-		return resultList;
-	}
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<Home> getHouses() {
+    List<Home> resultList = manager.createQuery("Select a From Home a", Home.class).getResultList();
+    System.out.println("Home quantuty :" + resultList.size());
+    return resultList;
+  }
 
-	@GET
-	@Path("/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Home getHome(@PathParam("id") String id) {
-		System.out.println("Get " + id);
-		Home resultList = getHomeById(Integer.parseInt(id));
-		return resultList;
-	}
+  @GET
+  @Path("/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Home getHome(@PathParam("id") String id) {
+    System.out.println("Getting home " + id);
+    Home resultList = new Home();
+    try {
+      resultList = getHomeById(Integer.parseInt(id));
+    } catch (Exception e) {
 
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Home> postHome(JSONObject home) {
-		tx.begin();
-		try {
-			Home h = new Home();
-			h.setName(home.getString("name"));
-			manager.persist(h);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		tx.commit();
-		return getHomes();
-	}
-	
-	@POST
-	@Path("/heater")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Home> postHeater(JSONObject heater) {
-		System.out.println("Post heater " + heater);
-		tx.begin();
-		try {
-			Heater h = new Heater();
-			Home home = (Home) getHomeById((int)heater.getLong("home_id"));
-			h.setName(heater.getString("name"));
-			
-			home.addHeater(h);
-			manager.persist(h);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		tx.commit();
-		return getHomes();
-	}
-	
-	public Home getHomeById(int id) {
-		return manager.createQuery("Select a From Home a where id =" + id, Home.class).getSingleResult();
-	}
-	
-	
-	
-	
-	
-	//Supprimer les residences dont l'adresse est passé en paramétre
-		//param : @adresse : l'adresse des résidences a supprimer
-		
-		@DELETE
-//	    @Path("/deleteHomeById")
-	    @Produces(MediaType.APPLICATION_JSON)
-	    public void  deleteHomeById(@FormParam("id") int id) {
-		HomeDAO homeDAO = new HomeDAO();
-		homeDAO.deleteById(id);
-		
-	}
-		
-	
-	
-	
+    }
+    System.out.println("Get home " + resultList);
+    return resultList;
+  }
+
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  public Home postHome(JSONObject home) {
+    tx.begin();
+    Home h = null;
+    try {
+      h = homeDAO.create(home.getString("taille"), home.getString("adresse"), home.getInt("nb_pieces"));
+      manager.persist(h);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    return h;
+  }
+
+  @GET
+  @Path("/{id}/heater")
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<Heater> getHomeHeaters(@PathParam("id") int id) {
+    System.out.println("Get home heaters " + id);
+    List<Heater> resultList = null;
+    try {
+      resultList = homeDAO.getHomeById(id).getHeaters();
+    }catch (Exception e){
+      resultList = null;
+    }
+    return resultList;
+  }
+
+  @GET
+  @Path("/{id}/heater/{idh}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Heater getHome(@PathParam("id") int id, @PathParam("idh") int idh) {
+    System.out.println("Get heater " + idh);
+    Heater resultList;
+    try {
+      resultList = homeDAO.getHomeHeaterById(id, idh);
+    }catch (Exception e){
+      resultList = null;
+    }
+    return resultList;
+  }
+
+  @POST
+  @Path("{id}/heater")
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<Heater> postHeater(@PathParam("id") int id, JSONObject heater) {
+    System.out.println("Post heater " + heater);
+    tx.begin();
+    List<Heater> heaterList = null;
+    try {
+      Heater h = heaterDAO.create(heater.getString("prix"),heater.getString("puissance"));
+      Home home = (Home) getHomeById(id);
+      homeDAO.update(h, home);
+      heaterList =  home.getHeaters();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    return heaterList;
+  }
+
+  /**
+   * Supprime un Heater Ã  une personne Ã  partir des 2  id
+   *
+   * @param  id
+   */
+  @DELETE
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("/{id}/heater/{idh}")
+  public void deletePersonElectronicDevice(@PathParam("idh") int id, @PathParam("idh") int idh) {
+    System.out.println("delete heater ->  "+idh);
+    try {
+      Heater heater = homeDAO.getHomeHeaterById(id,idh);
+      if (heater != null){
+        heaterDAO.delete(idh);
+      }
+    }catch (Exception e){
+
+    }
+  }
+
+
+  public Home getHomeById(int id) {
+    return manager.createQuery("Select a From Home a where id =" + id, Home.class).getSingleResult();
+  }
+
+  /**
+   * Supprimer les residences dont l'adresse est passï¿½ en paramï¿½tre
+   * param : @adresse : l'adresse des rï¿½sidences a supprimer
+   *
+   * @param id
+   */
+  @DELETE
+  @Path("/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public void deleteHomeById(@PathParam("id") int id) {
+    homeDAO.deleteById(id);
+  }
 }
-
-
-

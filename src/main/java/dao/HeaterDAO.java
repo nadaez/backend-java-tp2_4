@@ -11,36 +11,40 @@ import domain.Home;
 import domain.Person;
 
 public class HeaterDAO {
-	
-	EntityManagerFactory factory = Persistence
-			.createEntityManagerFactory("mysqlperso");
-	EntityManager manager = factory.createEntityManager();
-	
-	EntityTransaction tx = manager.getTransaction();
-	
-	
-public Heater create(String puissance){
 
-	
-	Heater heaterTest = new Heater();
+  EntityManagerFactory factory = Persistence
+    .createEntityManagerFactory("mysqlperso");
+  EntityManager manager = factory.createEntityManager();
+  EntityTransaction tx = manager.getTransaction();
 
-	tx.begin();
+  public Heater create(String prix, String puissance) {
+    System.out.println("Creating heater ...");
+    Heater heater = new Heater(prix, puissance);
+    tx.begin();
+    try {
+      manager.persist(heater);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    System.out.println("Heater Drevice created with succes !!! ");
+    return heater;
+  }
 
-	try {
 
-		heaterTest.setPuissance(puissance);
-		manager.persist(heaterTest);
+  public Heater getHeaterById(int id) {
+    return manager.createQuery("Select a From Heater a where id =" + id, Heater.class).getSingleResult();
+  }
 
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	tx.commit();
-	System.out.println("Heater Drevice created with succes !!! ");
-	return heaterTest;
-//	manager.close();
-//	factory.close();
+  public void delete(int idRes) {
+    tx.begin();
+    try {
+      manager.remove(getHeaterById(idRes));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    System.out.println("Heater  deleted with succes !!! ");
+  }
 
 }
-}
-	
-

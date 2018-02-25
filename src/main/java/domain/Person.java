@@ -8,11 +8,11 @@ import java.util.List;
 public class Person {
     long id ;
     String name ;
-    List<ElectronicDevice> electronicDevices  = new ArrayList<ElectronicDevice>();
-    List<Home> homes  = new ArrayList<Home>();
-    String firstname ;
-    String mail ;
-    String age ;
+  String firstname ;
+  String mail ;
+  String age ;
+  List<ElectronicDevice> electronicDevices  = new ArrayList<ElectronicDevice>();
+  List<Home> homes  = new ArrayList<Home>();
 
     public String getFirstname() {
         return firstname;
@@ -62,11 +62,11 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public void setMail(String m) {
         this.mail = m;
     }
-    
+
     public String getMail() {
         return mail;
     }

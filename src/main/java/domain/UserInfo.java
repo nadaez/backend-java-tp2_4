@@ -26,15 +26,15 @@ public class UserInfo extends HttpServlet {
 		tx.begin();
 		try {
 			createPerson(request.getParameter("name"), request.getParameter("firstname"), request.getParameter("age"));
-			
-			response.setContentType("text/html");			
+
+			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
 			out.println("<HTML>\n<BODY>\n" + "<H1>Add success </H1>\n" + "<UL>\n" + " <LI>Nom: "
 					+ request.getParameter("name") + "\n" + " <LI>Prenom: " + request.getParameter("firstname") + "\n"
 					+ " <LI>Age: " + request.getParameter("age") + "\n" + "</UL>\n\n");
-			
+
 			outPersonList(request, response);
-			
+
 			out.println("</BODY></HTML>");
 		} catch (Exception e) {
 			e.printStackTrace();

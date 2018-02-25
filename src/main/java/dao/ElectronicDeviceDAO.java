@@ -16,71 +16,51 @@ import domain.Person;
 import domain.Home;
 
 public class ElectronicDeviceDAO {
-	
-	EntityManagerFactory factory = Persistence
-			.createEntityManagerFactory("mysqlperso");
-	EntityManager manager = factory.createEntityManager();
-	
-	EntityTransaction tx = manager.getTransaction();
-	
-	
 
-	
-	public ElectronicDevice create(String marque,String name){
+  EntityManagerFactory factory = Persistence
+    .createEntityManagerFactory("mysqlperso");
+  EntityManager manager = factory.createEntityManager();
+  EntityTransaction tx = manager.getTransaction();
 
-//		EntityManagerFactory factory = Persistence
-//				.createEntityManagerFactory("mysql");
-//		EntityManager manager = factory.createEntityManager();
-//		
-//		EntityTransaction tx = manager.getTransaction();
-		tx.begin();
-		ElectronicDevice elec=new ElectronicDevice();
+  public ElectronicDevice create(String prix, String name, String marque)  {
+    tx.begin();
+    ElectronicDevice elec = new ElectronicDevice(prix, name,marque) ;
 
-		try {
+    try {
+      manager.persist(elec);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    System.out.println("ElecDevice was  created with succes !!! ");
+    return elec;
+  }
 
-			elec.setName(name);
-			elec.setMarque(marque);
-//			List<Person> personLista=new ArrayList<Person>();
-//			personLista.add(firstPerson);
-//			home1.setPersonnes(personLista);
-			manager.persist(elec);
+  public void delete(int idRes) {
+    tx.begin();
+    try {
+      manager.remove(getDeviceById(idRes));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    System.out.println("ElecDevice  deleted with succes !!! ");
+  }
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		tx.commit();
-		System.out.println("ElecDevice was  created with succes !!! ");
-		return elec;
-//		manager.close();
-//		factory.close();
+  public ElectronicDevice findById(int id) {
 
-	}
-	public void delete(int idRes){
+    return manager.find(ElectronicDevice.class, id);
+  }
 
-//		EntityManagerFactory factory = Persistence
-//				.createEntityManagerFactory("mysql");
-//		EntityManager manager = factory.createEntityManager();
-//		
-//		EntityTransaction tx = manager.getTransaction();
-tx.begin();
-try {
-			  manager.remove(findById(idRes));	
-			  } catch (Exception e) {
-					e.printStackTrace();
-				}
-			  
-			  tx.commit();
-			System.out.println("ElecDevice  deleted with succes !!! ");
 
-	
-	}
-	
-	public ElectronicDevice findById(int id){
-		
-//tx.begin();
-		return manager.find(ElectronicDevice.class, id);
-//		manager.close();
-//		factory.close();
-}
-	
+  public ElectronicDevice getDeviceById(int id) {
+    return manager.createQuery("Select a From ElectronicDevice a where id =" + id, ElectronicDevice.class).getSingleResult();
+  }
+
+  /**
+   *   Assurer qu'une personne ne voit pas les devices d'une autre
+   */
+  public ElectronicDevice getUserDeviceById(int uid, int did) {
+    return manager.createQuery("Select a From ElectronicDevice a where id =" + did+" and id_person = "+uid, ElectronicDevice.class).getSingleResult();
+  }
 }

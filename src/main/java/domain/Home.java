@@ -7,48 +7,69 @@ import java.util.List;
 @Entity
 public class Home {
 
-    Long id;
-    String name;
-    String adresse;
-    public String getAdresse() {
-		return adresse;
-	}
+  Long id;
+  String taille;
+  String adresse;
+  int nb_pieces;
 
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
 
-	List<Heater> heaters = new ArrayList<Heater>();
+  public Home() {
 
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Home(String taille, String adresse, int nb_pieces) {
+    this.taille = taille;
+    this.adresse = adresse;
+    this.nb_pieces = nb_pieces;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public int getNb_pieces() {
+    return nb_pieces;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setNb_pieces(int nb_pieces) {
+    this.nb_pieces = nb_pieces;
+  }
 
-    @OneToMany(targetEntity =Heater.class )
-    @JoinColumn(name="id_home",referencedColumnName = "id")
-    public List<Heater> getHeaters() {
-        return heaters;
-    }
+  public String getAdresse() {
+    return adresse;
+  }
 
-    public void setHeaters(List<Heater> heaters) {
-        this.heaters = heaters;
-    }
+  public void setAdresse(String adresse) {
+    this.adresse = adresse;
+  }
 
-    public void addHeater(Heater heater){
-        heaters.add(heater);
-    }
+  List<Heater> heaters = new ArrayList<Heater>();
+
+  @Id
+  @GeneratedValue
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getTaille() {
+    return taille;
+  }
+
+  public void setTaille(String taille) {
+    this.taille = taille;
+  }
+
+  @OneToMany(targetEntity = Heater.class)
+  @JoinColumn(name = "id_home", referencedColumnName = "id")
+  public List<Heater> getHeaters() {
+    return heaters;
+  }
+
+  public void setHeaters(List<Heater> heaters) {
+    this.heaters = heaters;
+  }
+
+  public void addHeater(Heater heater) {
+    heaters.add(heater);
+  }
 }

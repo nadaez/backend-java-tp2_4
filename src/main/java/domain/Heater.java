@@ -9,37 +9,31 @@ import javax.persistence.Id;
 @DiscriminatorValue("Chauffage")
 public class Heater extends Device {
 
-    public Heater() {
-		super();
-	}
+  String name;
+  String puissance;
 
-//	Long id;
-    String name;
-String puissance;
+  public Heater() {
+    super();
+  }
 
-//    @Id
-//    @GeneratedValue
-//    public Long getId() {
-//        return id;
-//    }
+  public Heater(String prix, String puissance) {
+    this.puissance = puissance;
+    this.setPrix(prix);
+  }
 
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
+  public String getName() {
+    return name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public String getPuissance() {
-        return puissance;
-    }
+  public String getPuissance() {
+    return puissance;
+  }
 
-    public void setPuissance(String p) {
-        this.puissance = p;
-    }
+  public void setPuissance(String p) {
+    this.puissance = p;
+  }
 }

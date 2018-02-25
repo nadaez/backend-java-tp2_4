@@ -12,3 +12,12 @@
 0:0:0:0:0:0:0:1 - - [24/Feb/2018:19:34:05 +0100] "DELETE /rest/deleteHomeById HTTP/1.1" 404 - http-bio-8080-exec-2 89
 0:0:0:0:0:0:0:1 - - [24/Feb/2018:19:35:33 +0100] "DELETE /rest/home/deleteHomeById HTTP/1.1" 204 - http-bio-8080-exec-5 1672
 0:0:0:0:0:0:0:1 - - [24/Feb/2018:19:47:05 +0100] "DELETE /rest/home HTTP/1.1" 204 - http-bio-8080-exec-2 1919
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:22:34 +0100] "GET /rest/persons HTTP/1.1" 500 3598 http-bio-8080-exec-2 1623
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:22:52 +0100] "GET /rest/home HTTP/1.1" 200 2360 http-bio-8080-exec-4 515
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:23:11 +0100] "DELETE /rest/home HTTP/1.1" 204 - http-bio-8080-exec-5 268
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:23:46 +0100] "DELETE /rest/home HTTP/1.1" 204 - http-bio-8080-exec-6 322
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:24:20 +0100] "DELETE /rest/home HTTP/1.1" 204 - http-bio-8080-exec-7 309
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:24:31 +0100] "DELETE /rest/home HTTP/1.1" 204 - http-bio-8080-exec-8 225
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:46:30 +0100] "GET /rest/persons HTTP/1.1" 500 3598 http-bio-8080-exec-2 1635
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:46:35 +0100] "GET /rest/person HTTP/1.1" 200 1438 http-bio-8080-exec-4 1352
+0:0:0:0:0:0:0:1 - - [24/Feb/2018:23:46:54 +0100] "GET /rest/person/19 HTTP/1.1" 500 6523 http-bio-8080-exec-5 220
