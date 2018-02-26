@@ -30,7 +30,7 @@ public class JpaTest {
 
 		homeDao.update(heater1, home1);
 
-	personDao.updateHome(personne1,home1);
+	personDao.addHome(personne1,home1);
 
 
 	}

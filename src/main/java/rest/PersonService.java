@@ -164,7 +164,7 @@ public class PersonService {
     try {
       Home home = homeDAO.create(h.getString("taille"), h.getString("adresse"), h.getInt("nb_pieces"));
       Person person = getPersonById(id);
-      personDAO.updateHome(person, home);
+      personDAO.addHome(person, home);
       homes = person.getHomes();
     } catch (Exception e) {
       e.printStackTrace();
@@ -354,5 +354,66 @@ public class PersonService {
     }
     tx.commit();
     return electronicDevices;
+  }
+
+
+  @GET
+  @Path("/{id}/friend")
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<Person> getFriend(@PathParam("id") String id) {
+    System.out.println("Get friend " + id);
+    List<Person> friends = null;
+    tx.begin();
+    try {
+      int p = Integer.parseInt(id);
+      Person person = getPersonById(p);
+      friends = person.getFreinds();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    return friends;
+  }
+
+  @POST
+  @Path("/{id}/friend/{idf}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<Person> postFriend(@PathParam("id") String id,@PathParam("idf") String idf) {
+    System.out.println("Post friend " + idf);
+    List<Person> friends = null;
+    tx.begin();
+    try {
+      int p = Integer.parseInt(id);
+      int f = Integer.parseInt(idf);
+      Person person = getPersonById(p);
+      Person friend = getPersonById(f);
+      personDAO.addFriend(person, friend);
+      friends = person.getFreinds();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    return friends;
+  }
+
+  @DELETE
+  @Path("/{id}/friend/{idf}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public List<Person> deleteFriend(@PathParam("id") String id,@PathParam("idf") String idf) {
+    System.out.println("Post friend " + idf);
+    List<Person> friends = null;
+    tx.begin();
+    try {
+      int p = Integer.parseInt(id);
+      int f = Integer.parseInt(idf);
+      Person person = getPersonById(p);
+      Person friend = getPersonById(f);
+      personDAO.deleteFriend(person, friend);
+      friends = person.getFreinds();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    tx.commit();
+    return friends;
   }
 }

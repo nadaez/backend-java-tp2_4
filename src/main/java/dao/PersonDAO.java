@@ -58,7 +58,7 @@ public class PersonDAO {
     }
   }
 
-  public void updateHome(Person person, Home home) {
+  public void addHome(Person person, Home home) {
     tx.begin();
     person.getHomes().add(home);
     manager.merge(person);
@@ -70,5 +70,21 @@ public class PersonDAO {
     person.getElectronicDevices().add(elec);
     manager.merge(person);
     tx.commit();
+  }
+
+  public List<Person>  addFriend(Person person, Person friend) {
+    tx.begin();
+    person.getFreinds().add(friend);
+    manager.merge(person);
+    tx.commit();
+    return person.getFreinds();
+  }
+
+  public List<Person> deleteFriend(Person person, Person friend) {
+    tx.begin();
+    person.getFreinds().remove(friend);
+    manager.merge(person);
+    tx.commit();
+    return person.getFreinds();
   }
 }

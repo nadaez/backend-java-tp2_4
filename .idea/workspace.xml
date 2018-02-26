@@ -2,44 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa01a3b7-464f-4fdb-bbe8-e46b1ceed0d5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/ElectronicDeviceDAO.class" afterPath="$PROJECT_DIR$/target/classes/dao/ElectronicDeviceDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/GenericDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/GenericDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/GenericDaoJpaImpl.class" afterPath="$PROJECT_DIR$/target/classes/dao/GenericDaoJpaImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/HeaterDAO.class" afterPath="$PROJECT_DIR$/target/classes/dao/HeaterDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/HomeDAO.class" afterPath="$PROJECT_DIR$/target/classes/dao/HomeDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/PersonDAO.class" afterPath="$PROJECT_DIR$/target/classes/dao/PersonDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/domain/Device.class" afterPath="$PROJECT_DIR$/target/classes/domain/Device.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/domain/ElectronicDevice.class" afterPath="$PROJECT_DIR$/target/classes/domain/ElectronicDevice.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/domain/Heater.class" afterPath="$PROJECT_DIR$/target/classes/domain/Heater.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/domain/Home.class" afterPath="$PROJECT_DIR$/target/classes/domain/Home.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/domain/Person.class" afterPath="$PROJECT_DIR$/target/classes/domain/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/domain/UserInfo.class" afterPath="$PROJECT_DIR$/target/classes/domain/UserInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jpa/JpaTest.class" afterPath="$PROJECT_DIR$/target/classes/jpa/JpaTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jpa/MyServlet.class" afterPath="$PROJECT_DIR$/target/classes/jpa/MyServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/rest/HomeService.class" afterPath="$PROJECT_DIR$/target/classes/rest/HomeService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/rest/SampleWebService.class" afterPath="$PROJECT_DIR$/target/classes/rest/SampleWebService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test.log" afterPath="$PROJECT_DIR$/data/test.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/ElectronicDeviceDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ElectronicDeviceDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/HeaterDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/HeaterDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/HomeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/HomeDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/PersonDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/PersonDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Device.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Device.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/ElectronicDevice.java" afterPath="$PROJECT_DIR$/src/main/java/domain/ElectronicDevice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Heater.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Heater.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Home.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Home.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Person.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/UserInfo.java" afterPath="$PROJECT_DIR$/src/main/java/domain/UserInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jpa/JpaTest.java" afterPath="$PROJECT_DIR$/src/main/java/jpa/JpaTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/HomeService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/HomeService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rest/PersonService.java" afterPath="$PROJECT_DIR$/src/main/java/rest/PersonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/myform.html" afterPath="$PROJECT_DIR$/src/main/webapp/myform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-24" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2018-02-24" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testjpa.iml" afterPath="$PROJECT_DIR$/testjpa.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PersonService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PersonService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/rest/PersonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="357" column="1" lean-forward="false" selection-start-line="357" selection-start-column="1" selection-end-line="357" selection-end-column="1" />
+            <state relative-caret-position="343">
+              <caret line="400" column="9" lean-forward="true" selection-start-line="400" selection-start-column="9" selection-end-line="400" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -67,7 +33,7 @@
       <file leaf-file-name="HomeDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/HomeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="241">
               <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
               <folding />
             </state>
@@ -84,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/domain/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="136">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,15 +93,11 @@
       <file leaf-file-name="PersonDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/PersonDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+            <state relative-caret-position="20">
+              <caret line="67" column="17" lean-forward="true" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
               <folding>
                 <element signature="method#create#0;class#PersonDAO#0" expanded="false" />
-                <element signature="method#findById#0;class#PersonDAO#0" expanded="false" />
-                <element signature="method#getPersonById#0;class#PersonDAO#0" expanded="false" />
                 <element signature="method#deleteById#0;class#PersonDAO#0" expanded="false" />
-                <element signature="method#updateHome#0;class#PersonDAO#0" expanded="false" />
-                <element signature="method#addDevice#0;class#PersonDAO#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -144,7 +106,7 @@
       <file leaf-file-name="HeaterDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/HeaterDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="-201">
               <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
               <folding />
             </state>
@@ -204,6 +166,7 @@
       <find>/{id}/home/{idh}</find>
       <find>heaterDAO</find>
       <find>fr</find>
+      <find>fre</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -222,8 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/dao/PersonDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Home.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/ElectronicDevice.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Heater.java" />
@@ -235,6 +196,8 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/HomeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/HomeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/HeaterDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/Person.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/PersonDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/PersonService.java" />
       </list>
     </option>
@@ -998,29 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/PersonDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
-          <folding>
-            <element signature="method#create#0;class#PersonDAO#0" expanded="false" />
-            <element signature="method#findById#0;class#PersonDAO#0" expanded="false" />
-            <element signature="method#getPersonById#0;class#PersonDAO#0" expanded="false" />
-            <element signature="method#deleteById#0;class#PersonDAO#0" expanded="false" />
-            <element signature="method#updateHome#0;class#PersonDAO#0" expanded="false" />
-            <element signature="method#addDevice#0;class#PersonDAO#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/HomeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rest/HomeService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1029,26 +969,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/HeaterDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/HomeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="241">
+          <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/PersonService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/HeaterDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="357" column="1" lean-forward="false" selection-start-line="357" selection-start-column="1" selection-end-line="357" selection-end-column="1" />
+        <state relative-caret-position="-201">
+          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="136">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/PersonDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="67" column="17" lean-forward="true" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+          <folding>
+            <element signature="method#create#0;class#PersonDAO#0" expanded="false" />
+            <element signature="method#deleteById#0;class#PersonDAO#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/PersonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="400" column="9" lean-forward="true" selection-start-line="400" selection-start-column="9" selection-end-line="400" selection-end-column="9" />
           <folding />
         </state>
       </provider>

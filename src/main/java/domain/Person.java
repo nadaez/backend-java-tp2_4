@@ -13,6 +13,7 @@ public class Person {
   String age ;
   List<ElectronicDevice> electronicDevices  = new ArrayList<ElectronicDevice>();
   List<Home> homes  = new ArrayList<Home>();
+  List<Person> freinds = new ArrayList<Person>();
 
     public String getFirstname() {
         return firstname;
@@ -38,9 +39,6 @@ public class Person {
     public void setFreinds(List<Person> freinds) {
         this.freinds = freinds;
     }
-
-    List<Person> freinds = new ArrayList<Person>();
-
 
     @Id
     @GeneratedValue
