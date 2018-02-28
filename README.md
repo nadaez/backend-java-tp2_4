@@ -41,7 +41,7 @@ GLOA : tomcat7:run
 
 ## Authors
 
-* **Nabe** - *work* - [PurpleBooth](https://github.com/diarranabe)
+* **Nabe** - *work* - [PurpleBlue](https://github.com/diarranabe)
 * **Nada** - *work* - [PurpleOrange](https://github.com/nadaez)
 * **Maud** - *work* - [PurpleBlack](https://github.com/maudmcok)
 
