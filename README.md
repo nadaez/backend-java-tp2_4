@@ -16,8 +16,10 @@ Base de donnees ()Java  -  Maven
 
 ### Installing
 
-1: Configuration server /n 
-ficher persistence.xml (src/java/resources/META-INF) 
+1: Configuration server 
+
+
+ dans le ficher persistence.xml (src/java/resources/META-INF) 
 utiliser les informations de votre server 'nom' 'password' et nom de la BD  'jpaservelet'
 
             <property name="hibernate.connection.password" value="yourPassword"/>
