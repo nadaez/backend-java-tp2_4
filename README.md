@@ -10,7 +10,13 @@ One Paragraph of project description goes here
 What things you need to install the software and how to install them
 
 ```
-Base de donnees ()Java  -  Maven
+ Java  -
+ Maven -
+ Apache tomcat -
+ Hibernate -
+ Javax servlet -
+ jersey -  
+ Postman -
 
 ```
 
@@ -26,18 +32,18 @@ utiliser les informations de votre server 'nom' 'password' et nom de la BD  'jpa
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost/YourBDName"/>
             <property name="hibernate.connection.username" value="Name"/>
 
-Demarer votre server (Wamp)
+2: Demarer votre server (Wamp)
 
-2: lancer l'application JpaTest(Java)
+3: lancer l'application JpaTest(Java)
 ```
 il créaion des tables dans la BD
 ```
 
-3: Lancer l'application MyServlet (Maven)
+4: Lancer l'application MyServlet (Maven)
 ```
 GLOA : tomcat7:run
 ```
-4: Faite vos requetes (postman) ou utiliser le navigateur web pour le visionage des données
+5: Faite vos requetes (postman) ou utiliser le navigateur web pour le visionage des données
 
 
 
