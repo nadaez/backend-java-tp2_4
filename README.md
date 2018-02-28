@@ -42,8 +42,8 @@ GLOA : tomcat7:run
 ## Authors
 
 * **Nabe** - *work* - [PurpleBooth](https://github.com/diarranabe)
-* **Nada** - *work* - [PurpleBooth](https://github.com/nadaez)
-* **Maud** - *work* - [PurpleBooth](https://github.com/maudmcok)
+* **Nada** - *work* - [PurpleOrange](https://github.com/nadaez)
+* **Maud** - *work* - [PurpleBlack](https://github.com/maudmcok)
 
 See also the list of [contributors](https://github.com/diarranabe/backend-java-tp2_4/contributors) who participated in this project.
 
