@@ -1,13 +1,13 @@
 # backend-java-tp2_4
 
-One Paragraph of project description goes here
+L’objectif de ce projet est de construire une application type réseau social permettant de comparer sa consommation électrique avec ses amis et ses voisins.(#version Api)
 
 ## Getting Started
 
+#### Design
+Please refer to the [design](docs/design.md) for more information.
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
 
 ```
  Java  -
@@ -57,4 +57,4 @@ See also the list of [contributors](https://github.com/diarranabe/backend-java-t
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU License.
